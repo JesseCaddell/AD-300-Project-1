@@ -12,7 +12,7 @@ public record Song(String trackName, String artistName, String releasedYear, Str
     public Song {
         if (trackName == null || artistName == null || releasedYear == null || releasedMonth == null || releasedDay == null || totalNumberOfStreamsOnSpotify == null)
             throw new NullPointerException("Error: Data is null");
-        if (trackName.equals("") || artistName.equals("") || releasedYear.equals("") || releasedMonth.equals("") || releasedDay.equals("") || totalNumberOfStreamsOnSpotify.equals(""))
+        if (trackName.isEmpty() || artistName.isEmpty() || releasedYear.isEmpty() || releasedMonth.isEmpty() || releasedDay.isEmpty() || totalNumberOfStreamsOnSpotify.isEmpty())
             throw new IllegalArgumentException("Data cannot be blank");
     }
 

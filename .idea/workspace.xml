@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99e7477e-1284-40f5-9674-062d0909e204" name="Changes" comment="omg I fixed it. But I think a few methods are returning values off by one index.">
+    <list default="true" id="99e7477e-1284-40f5-9674-062d0909e204" name="Changes" comment="Ready to move onto GUI creation. Fingers crossed.">
+      <change afterPath="$PROJECT_DIR$/src/SongGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SongManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Record" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -68,9 +67,16 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.SongGUI">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Project 1 AD300" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SongGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SongGUI" />
       <module name="Project 1 AD300" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -88,6 +94,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SongGUI" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SongTest.constructor" />
       </list>
@@ -130,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698215727583</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ready to move onto GUI creation. Fingers crossed.">
+      <created>1698218426998</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698218426998</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -139,7 +153,8 @@
     <MESSAGE value="Added SongManager data. I think the loop works now, needs more testing." />
     <MESSAGE value="Updated Songmanager but still have problems." />
     <MESSAGE value="omg I fixed it. But I think a few methods are returning values off by one index." />
-    <option name="LAST_COMMIT_MESSAGE" value="omg I fixed it. But I think a few methods are returning values off by one index." />
+    <MESSAGE value="Ready to move onto GUI creation. Fingers crossed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ready to move onto GUI creation. Fingers crossed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

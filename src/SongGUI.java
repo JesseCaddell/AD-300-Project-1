@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -126,33 +125,50 @@ public class SongGUI extends JFrame {
                 if (selectedIndex != -1) {
                     currentYearIndex = selectedIndex;
                     currentSongIndex = 0;
-                    Song song = songManager.getSong(currentYearIndex, currentSongIndex);
-                    if (song != null) {
-                        trackTextField.setText(song.getTrackName());
-                        artistTextField.setText(song.getArtistName());
-                        releaseTextField.setText(song.getReleasedDay());
-                        streamTextField.setText(song.getTotalNumberOfStreamsOnSpotify());
-                    }
+                    displaySongInfo();
 
 
                 }
             }
         });
-        // Why wont this helper method work?
 
-//        private void displaySongInfo() {
-//            if (currentYearIndex != -1) {
-//                Song song = songManager.getSong(currentYearIndex, currentSongIndex);
-//                if (song != null) {
-//                    trackTextField.setText(song.getTrackName());
-//                    artistTextField.setText(song.getArtistName());
-//                    releaseTextField.setText(song.getReleasedDay());
-//                    streamTextField.setText(song.getTotalNumberOfStreamsOnSpotify());
-//                }
-//            }
-//        }
+        //Action Listener for prev button
+        prevButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (currentYearIndex != -1 && currentSongIndex > 0) {
+                    currentSongIndex--;
+                    displaySongInfo();
+                }
+            }
+        });
+
+        //Action Listener for next button
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (currentYearIndex != -1 && currentSongIndex < songManager.getSongCount(currentYearIndex) - 1) {
+                    currentSongIndex++;
+                    displaySongInfo();
+                }
+            }
+        });
 
 
+
+
+    }
+
+    private void displaySongInfo() {
+        if (currentYearIndex != -1) {
+            Song song = songManager.getSong(currentYearIndex, currentSongIndex);
+            if (song != null) {
+                trackTextField.setText(song.getTrackName());
+                artistTextField.setText(song.getArtistName());
+                releaseTextField.setText(song.getReleasedDay());
+                streamTextField.setText(song.getTotalNumberOfStreamsOnSpotify());
+            }
+        }
     }
 
 

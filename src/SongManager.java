@@ -1,9 +1,6 @@
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
-import com.opencsv.exceptions.CsvValidationException;
-
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
@@ -14,96 +11,79 @@ public class SongManager implements SongManagerInterface {
 
     int[] releaseYears;
     Song[][] songs;
-
-    public void setReleaseYears() {
+//    public SongManager() {
+//        SongManager songManager = new SongManager();
+//
+//    }
+    public void populateSongs() {
         try {
-            File file = new File("src/count-by-release-year.csv");
-            Scanner fileScanner = new Scanner(file);
+            //read data from count by release
+            File countFile = new File("src/count-by-release-year.csv");
+            Scanner countScanner = new Scanner(countFile);
 
             //read number of years
-            int numYears = Integer.parseInt(fileScanner.nextLine());
+            int numYears = Integer.parseInt(countScanner.nextLine());
             releaseYears = new int[numYears];
-            int[] counts = new int[numYears];
+            songs = new Song[numYears][];
 
-            //Skip next line lines
-            fileScanner.nextLine();
+            //Skip next line
+            countScanner.nextLine();
 
-            //read and store release years
+
+            //Read and store release years and counts
             int yearCount = 0;
-            while (fileScanner.hasNextLine()) {
-                String line = fileScanner.nextLine();
-                //Split by comma
+            while (countScanner.hasNextLine()) {
+                String line = countScanner.nextLine();
                 String[] parts = line.split(",");
                 if (parts.length >= 2) {
                     int year = Integer.parseInt(parts[0].trim());
-                    int count = Integer.parseInt(parts[1].trim());
                     releaseYears[yearCount] = year;
-                    counts[yearCount] = count;
+                    int count = Integer.parseInt(parts[1].trim());
+                    songs[yearCount] = new Song[count];
                     yearCount++;
                 }
-
             }
-            fileScanner.close();
+            countScanner.close();
 
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found: " + e.getMessage());
+
+        } catch (IOException e) {
+            System.err.println("Error reading count-by-release-year.csv: " +e.getMessage());
+        } catch (NumberFormatException e) {
+            System.err.println("Error parsing numeric values: " + e.getMessage());
         }
 
-
-    }
-
-    public void setSongs() {
         try {
+            //Read data from Spotify2023.csv
             CSVReader songReader = new CSVReader(new FileReader("src/spotify-2023.csv"));
             List<String[]> allSongData = songReader.readAll();
 
-
-            //Song array
             for (String[] songInfo : allSongData.subList(1, allSongData.size())) {
                 int year = Integer.parseInt(songInfo[3]);
                 int yearIndex = Arrays.binarySearch(releaseYears, year);
-                if (yearIndex >= 0) {
+                if (yearIndex >= 0 ) {
                     String trackName = songInfo[0];
                     String artistName = songInfo[1];
                     String releasedYear = songInfo[3];
                     String releasedMonth = songInfo[4];
                     String releasedDay = songInfo[5];
                     String totalNumberOfStringsOnSpotify = songInfo[8];
-//    WTF AM I DOING WRONG HERE. This seems to be the problem area. Tried many different things. Maybe I am not just doing
-                    //the basic plus 1 to song index?? Come back here after break
-                    if (songs[yearIndex] == null) {
-                        songs[yearIndex] = new Song[1];
-                    } else {
-                        int songCount = getSongCount(yearIndex);
-                        if (songCount == songs[yearIndex].length) {
-                            songs[yearIndex] = Arrays.copyOf(songs[yearIndex], songCount * 2);
+
+                    //Check for space
+                    for (int songIndex = 0; songIndex < songs[yearIndex].length; songIndex++) {
+                        if (songs[yearIndex][songIndex] == null) {
+                            songs[yearIndex][songIndex] = new Song(trackName, artistName, releasedYear, releasedMonth, releasedDay, totalNumberOfStringsOnSpotify);
+                            break;
                         }
                     }
-
-                    int songCount = getSongCount(yearIndex);
-                    songs[yearIndex][songCount] = new Song(trackName, artistName, releasedYear, releasedMonth, releasedDay, totalNumberOfStringsOnSpotify);
                 }
             }
-//            for (int i = 0; i < numRows; i++) {
-//                for (int j = 0; j < numColumns; j++) {
-//                    String[] songInfo = allSongData.get(j + 1); //skip header row
-//                    String trackName = songInfo[0];
-//                    String artistName = songInfo[1];
-//                    String releasedYear = songInfo[3];
-//                    String releasedMonth = songInfo[4];
-//                    String releasedDay = songInfo[5];
-//                    String totalNumberOfStringsOnSpotify = songInfo[8];
-//
-//                    songs[i][j] = new Song(trackName, artistName, releasedYear, releasedMonth, releasedDay, totalNumberOfStringsOnSpotify);
-//                    //System.out.println(songs[i][j]); //for testing purposes
-//                }
-//            }
         } catch (IOException | CsvException e) {
-            System.out.println("error: " + e.getMessage());
-
+            System.err.println("Error reading spotify-2023.csv: " + e.getMessage());
         }
-
     }
+
+
+
 
     @Override
     public int getYearCount() {
@@ -113,8 +93,7 @@ public class SongManager implements SongManagerInterface {
     @Override
     public int getSongCount(int yearIndex) {
         if (yearIndex >= 0 && yearIndex < releaseYears.length) {
-            int songCount = songs[yearIndex].length;
-            return songCount;
+            return songs[yearIndex].length;
         } else {
             return 0;
         }

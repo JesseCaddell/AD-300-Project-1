@@ -47,5 +47,10 @@ public record Song(String trackName, String artistName, String releasedYear, Str
     public int compareTo(Song otherSong) {
         return this.trackName.compareTo(otherSong.trackName);
     }
+    @Override
+    public String toString() {
+        return String.format("Track: %s, Artist: %s, Year: %s/%s/%s, Streams on Spotify: %s",
+                trackName, artistName, releasedYear, releasedMonth, releasedDay, totalNumberOfStreamsOnSpotify);
+    }
 
 }

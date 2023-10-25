@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99e7477e-1284-40f5-9674-062d0909e204" name="Changes" comment="Updated Songmanager but still have problems.">
+    <list default="true" id="99e7477e-1284-40f5-9674-062d0909e204" name="Changes" comment="omg I fixed it. But I think a few methods are returning values off by one index.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SongManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongManager.java" afterDir="false" />
@@ -123,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698199002750</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="omg I fixed it. But I think a few methods are returning values off by one index.">
+      <created>1698215727583</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698215727583</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -131,20 +138,21 @@
     <MESSAGE value="most recent work" />
     <MESSAGE value="Added SongManager data. I think the loop works now, needs more testing." />
     <MESSAGE value="Updated Songmanager but still have problems." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Songmanager but still have problems." />
+    <MESSAGE value="omg I fixed it. But I think a few methods are returning values off by one index." />
+    <option name="LAST_COMMIT_MESSAGE" value="omg I fixed it. But I think a few methods are returning values off by one index." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SongManager.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="15" />
+          <line>149</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SongManager.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="16" />
+          <line>160</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

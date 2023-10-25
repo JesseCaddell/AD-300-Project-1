@@ -11,10 +11,7 @@ public class SongManager implements SongManagerInterface {
 
     int[] releaseYears;
     Song[][] songs;
-//    public SongManager() {
-//        SongManager songManager = new SongManager();
-//
-//    }
+
     public void populateSongs() {
         try {
             //read data from count by release

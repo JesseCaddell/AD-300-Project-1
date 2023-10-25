@@ -57,7 +57,13 @@ public class SongManager implements SongManagerInterface {
             CSVReader songReader = new CSVReader(new FileReader("src/spotify-2023.csv"));
             List<String[]> allSongData = songReader.readAll();
 
+            // just iterate through the years here rather than doing this
             for (String[] songInfo : allSongData.subList(1, allSongData.size())) {
+                // iterating through years will make you not have to do this. This
+                // is much more complex and binary search is unnecessary
+                //the songs are already sorted by year, so you can just add them in within the second for loop.
+                // then it will move to the outside loop incrementing year and then each song can be added to that nested array.
+                // The exact amount of songs will be entered because you know the amount of songs from each number
                 int year = Integer.parseInt(songInfo[3]);
                 int yearIndex = Arrays.binarySearch(releaseYears, year);
                 if (yearIndex >= 0 ) {
@@ -70,6 +76,7 @@ public class SongManager implements SongManagerInterface {
 
                     //Check for space
                     for (int songIndex = 0; songIndex < songs[yearIndex].length; songIndex++) {
+                        // id recommend moving the capturing of the song properties here and then pass them into the Song constructor
                         if (songs[yearIndex][songIndex] == null) {
                             songs[yearIndex][songIndex] = new Song(trackName, artistName, releasedYear, releasedMonth, releasedDay, totalNumberOfStringsOnSpotify);
                             break;
@@ -119,6 +126,8 @@ public class SongManager implements SongManagerInterface {
     @Override
     public int getSongCount(String year) {
         int yearIndex = -1;
+        // rather than use a for loop here you can use the getIndexOf method which returns -1 if not found
+        //  int idx = getIndexOf(releaseYears, year);
         for (int i = 0; i < releaseYears.length; i++) {
             if (getYearName(i).equals(year)) {
                 yearIndex = i;

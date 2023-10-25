@@ -109,6 +109,7 @@ public class SongManager implements SongManagerInterface {
     @Override
     public int getSongCount() {
         int totalSongCount = 0;
+        // IDE recommends changing to enhanced for loop e.g. for (Song[] s : songs)
         for (int i = 0; i < songs.length; i++) {
             totalSongCount += songs[i].length;
         }

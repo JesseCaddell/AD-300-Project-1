@@ -15,6 +15,24 @@ public record Song(String trackName, String artistName, String releasedYear, Str
         if (trackName.isEmpty() || artistName.isEmpty() || releasedYear.isEmpty() || releasedMonth.isEmpty() || releasedDay.isEmpty() || totalNumberOfStreamsOnSpotify.isEmpty())
             throw new IllegalArgumentException("Data cannot be blank");
     }
+    public String getTrackName() {
+        return trackName;
+    }
+    public String getArtistName() {
+        return artistName;
+    }
+    public String getReleasedYear() {
+        return releasedYear;
+    }
+    public String getReleasedMonth() {
+        return releasedMonth;
+    }
+    public String getReleasedDay() {
+        return releasedDay;
+    }
+    public String getTotalNumberOfStreamsOnSpotify() {
+        return totalNumberOfStreamsOnSpotify;
+    }
 
     //override of equals method
     public boolean equals(Object o) {

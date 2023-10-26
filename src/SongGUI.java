@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 public class SongGUI extends JFrame {
     private SongManager songManager;
@@ -160,13 +161,14 @@ public class SongGUI extends JFrame {
     }
 
     private void displaySongInfo() {
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
         if (currentYearIndex != -1) {
             Song song = songManager.getSong(currentYearIndex, currentSongIndex);
             if (song != null) {
                 trackTextField.setText(song.getTrackName());
                 artistTextField.setText(song.getArtistName());
-                releaseTextField.setText(song.getReleasedDay());
-                streamTextField.setText(song.getTotalNumberOfStreamsOnSpotify());
+                releaseTextField.setText(song.getReleasedMonth() + "/" + song.releasedDay() + "/" + song.releasedYear());
+                streamTextField.setText(decimalFormat.format(Long.parseLong(song.getTotalNumberOfStreamsOnSpotify())));
             }
         }
     }

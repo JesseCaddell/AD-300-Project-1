@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99e7477e-1284-40f5-9674-062d0909e204" name="Changes" comment="GUI creation finished. Only things missing are prev and next button. Trying to figure out why helper method will not work on line 143 of SongGUI. Was able to take the guts out and put it into the drop menu and it worked. Also need to figure out sizing or text. Testing.">
+    <list default="true" id="99e7477e-1284-40f5-9674-062d0909e204" name="Changes" comment="Finished buttons. Also need to figure out sizing or text. Testing.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SongGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698230967194</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Finished buttons. Also need to figure out sizing or text. Testing.">
+      <created>1698276058177</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698276058177</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -162,7 +170,8 @@
     <MESSAGE value="omg I fixed it. But I think a few methods are returning values off by one index." />
     <MESSAGE value="Ready to move onto GUI creation. Fingers crossed." />
     <MESSAGE value="GUI creation finished. Only things missing are prev and next button. Trying to figure out why helper method will not work on line 143 of SongGUI. Was able to take the guts out and put it into the drop menu and it worked. Also need to figure out sizing or text. Testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI creation finished. Only things missing are prev and next button. Trying to figure out why helper method will not work on line 143 of SongGUI. Was able to take the guts out and put it into the drop menu and it worked. Also need to figure out sizing or text. Testing." />
+    <MESSAGE value="Finished buttons. Also need to figure out sizing or text. Testing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished buttons. Also need to figure out sizing or text. Testing." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99e7477e-1284-40f5-9674-062d0909e204" name="Changes" comment="Finished buttons. Also need to figure out sizing or text. Testing.">
+    <list default="true" id="99e7477e-1284-40f5-9674-062d0909e204" name="Changes" comment="This is as far as I am willing to go. Maybe come back to this at a later date.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SongGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SongManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SongTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -68,7 +74,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SongGUI">
+  <component name="RunManager" selected="Application.SongTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Project 1 AD300" />
@@ -78,6 +84,13 @@
     </configuration>
     <configuration name="SongGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SongGUI" />
+      <module name="Project 1 AD300" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SongTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SongTest" />
       <module name="Project 1 AD300" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -95,8 +108,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SongGUI" />
+        <item itemvalue="Application.SongTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.SongGUI" />
         <item itemvalue="JUnit.SongTest.constructor" />
       </list>
     </recent_temporary>
@@ -159,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698276058177</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="This is as far as I am willing to go. Maybe come back to this at a later date.">
+      <created>1698300138126</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698300138126</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -171,7 +192,8 @@
     <MESSAGE value="Ready to move onto GUI creation. Fingers crossed." />
     <MESSAGE value="GUI creation finished. Only things missing are prev and next button. Trying to figure out why helper method will not work on line 143 of SongGUI. Was able to take the guts out and put it into the drop menu and it worked. Also need to figure out sizing or text. Testing." />
     <MESSAGE value="Finished buttons. Also need to figure out sizing or text. Testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished buttons. Also need to figure out sizing or text. Testing." />
+    <MESSAGE value="This is as far as I am willing to go. Maybe come back to this at a later date." />
+    <option name="LAST_COMMIT_MESSAGE" value="This is as far as I am willing to go. Maybe come back to this at a later date." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

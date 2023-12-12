@@ -63,12 +63,12 @@ public class SongManager implements SongManagerInterface {
                     String releasedYear = songInfo[3];
                     String releasedMonth = songInfo[4];
                     String releasedDay = songInfo[5];
-                    String totalNumberOfStringsOnSpotify = songInfo[8];
+                    String totalNumberOfStreamsOnSpotify = songInfo[8];
 
                     //Check for space
                     for (int songIndex = 0; songIndex < songs[yearIndex].length; songIndex++) {
                         if (songs[yearIndex][songIndex] == null) {
-                            songs[yearIndex][songIndex] = new Song(trackName, artistName, releasedYear, releasedMonth, releasedDay, totalNumberOfStringsOnSpotify);
+                            songs[yearIndex][songIndex] = new Song(trackName, artistName, releasedYear, releasedMonth, releasedDay, totalNumberOfStreamsOnSpotify);
                             break;
                         }
                     }
